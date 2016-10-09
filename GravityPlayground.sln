@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{2541A1B7-8315-53AC-FBB5-D86383D15AB0}") = "GravityPlayground", "Assembly-CSharp.csproj", "{C61C21B1-85FE-EB91-2344-25A6F6605C7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C61C21B1-85FE-EB91-2344-25A6F6605C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61C21B1-85FE-EB91-2344-25A6F6605C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61C21B1-85FE-EB91-2344-25A6F6605C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61C21B1-85FE-EB91-2344-25A6F6605C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
