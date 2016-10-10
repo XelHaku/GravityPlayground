@@ -5,7 +5,11 @@ public class PlanetData : MonoBehaviour
 {
 	public static Vector2 Afelio;
 	public static Vector2 Perihelio;
+	public static float PlanetPeriod;
+	private float TempPlanetPeriod;
+
 	private Vector2 PlanetPosition;
+
 	public static bool BeginCalculus;
 	float framerModule=1;
 
@@ -23,6 +27,8 @@ public class PlanetData : MonoBehaviour
 	}
 	// Use this for initialization
 	void Start () {
+		PlanetPeriod = 0;
+		TempPlanetPeriod = 0;
 		Afelio = new Vector2 (0, 0);
 		Perihelio = new Vector2 (1000000000000000,1000000000000000);
 		BeginCalculus = false;
@@ -54,7 +60,7 @@ public class PlanetData : MonoBehaviour
 			CheckPerihelio ();
 //			Debug.Log("Calculating APhelion and Phelion");
 		}
-	
+		TempPlanetPeriod = TempPlanetPeriod + Time.deltaTime;
 	}
 
 	void CheckAfelio(){
@@ -66,5 +72,29 @@ public class PlanetData : MonoBehaviour
 		if (PlanetPosition.magnitude < Perihelio.magnitude) {
 			Perihelio = PlanetPosition;
 		}
+	}
+
+
+	void OnTriggerEnter2D(Collider2D col) 
+	{
+		Debug.Log("PeriHelion Reached");
+		if(col.gameObject.tag == "Perihelion")
+		{			//gameObject.SetActive(false);
+			PlanetPeriod = TempPlanetPeriod;
+			TempPlanetPeriod = 0;
+			GetComponent<Collider2D> ().enabled = false;
+			StartCoroutine (DeactivateColliderDelay ());
+
+		}
+
+
+	}
+
+	IEnumerator	DeactivateColliderDelay(){
+		//Debug.Log("colider Activation");
+
+		yield return new WaitForSeconds (2.0f);
+		GetComponent<Collider2D> ().enabled = true;
+		Debug.Log("colider Activation");
 	}
 }

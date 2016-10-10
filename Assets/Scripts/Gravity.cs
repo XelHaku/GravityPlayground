@@ -13,8 +13,14 @@ public class Gravity : MonoBehaviour {
 	private double RealPosX, RealPosY;
 	float initVel_X ;
 	float initVel_Y;
+
+	public static float ForceMeasurement=0;
 	// Use this for initialization
 	void Start () {
+		GetComponent<Rigidbody2D> ().position = new Vector2 (-SliderValues.Distance, 0.0f);
+		initAngle = SliderValues.Angle;
+		initVelocity = SliderValues.Velocity;
+
 		 initVel_X = initVelocity * Mathf.Cos (Mathf.Deg2Rad*initAngle);
 		 initVel_Y = initVelocity * Mathf.Sin (Mathf.Deg2Rad* (initAngle));
 		var initiateVelocity = new Vector2 (initVel_X, initVel_Y); 
@@ -65,6 +71,9 @@ public class Gravity : MonoBehaviour {
 //		Vector2 gravityForce = new Vector2 ((float)tempGravityX, (float)tempGravityY);
 //		GetComponent<Rigidbody2D> ().AddForce (gravityForce);
 		GetComponent<Rigidbody2D> ().position=(new Vector2((float)RealPosX,(float)RealPosY));
+
+		ForceMeasurement = (float)((tempGravityX * tempGravityX + tempGravityY * tempGravityY));
+		ForceMeasurement = Mathf.Sqrt (ForceMeasurement);
 
 	}
 
