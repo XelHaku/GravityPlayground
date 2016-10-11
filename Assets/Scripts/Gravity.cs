@@ -14,7 +14,7 @@ public class Gravity : MonoBehaviour {
 	float initVel_X ;
 	float initVel_Y;
 
-	public static float ForceMeasurement=0;
+	public static double ForceMeasurement=0;
 	// Use this for initialization
 	void Start () {
 		GetComponent<Rigidbody2D> ().position = new Vector2 (-SliderValues.Distance, 0.0f);
@@ -27,6 +27,11 @@ public class Gravity : MonoBehaviour {
 		GetComponent<Rigidbody2D> ().velocity = initiateVelocity;
 		RealPosX = GetComponent<Rigidbody2D> ().position.x;
 		RealPosY = GetComponent<Rigidbody2D> ().position.y;
+
+		//Position of camera
+		GameObject Camera = GameObject.FindGameObjectWithTag ("MainCamera");
+		Camera.GetComponent<Transform> ().position = new Vector3((float)RealPosX/2,(float)RealPosY/2,Camera.GetComponent<Transform> ().position.z);
+
 	}
 	
 	// Update is called once per frame
@@ -72,8 +77,8 @@ public class Gravity : MonoBehaviour {
 //		GetComponent<Rigidbody2D> ().AddForce (gravityForce);
 		GetComponent<Rigidbody2D> ().position=(new Vector2((float)RealPosX,(float)RealPosY));
 
-		ForceMeasurement = (float)((tempGravityX * tempGravityX + tempGravityY * tempGravityY));
-		ForceMeasurement = Mathf.Sqrt (ForceMeasurement);
+		ForceMeasurement = ((tempGravityX * tempGravityX + tempGravityY * tempGravityY));
+		ForceMeasurement = Math.Sqrt (ForceMeasurement);
 
 	}
 

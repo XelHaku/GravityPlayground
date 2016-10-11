@@ -13,33 +13,55 @@ public class InstatiateLine : MonoBehaviour {
 	void Start () {
 		FixedSweptTime = TimeSlider.TimeSwept;
 		FixedVoidTime = TimeSlider.TimeSwept;
-		SweptTime = TimeSlider.TimeSwept;
-		VoidTime = TimeSlider.TimeSwept;
+		SweptTime = 0;
+		VoidTime = 0;
 		RandomColor = new Color (Random.value, Random.value, Random.value, 1.0f);
 		//InvokeRepeating("CreateLine", 2.0f, 0.01f);//
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		FixedSweptTime = TimeSlider.TimeSwept;
+		FixedVoidTime = TimeSlider.TimeSwept;
 		//Debug.log("TimeSwept " + )
-		if (SweptTime == FixedSweptTime) {
+		if (SweptTime == 0) {
 			RandomColor = new Color (Random.value, Random.value, Random.value, 1.0f);
-			InvokeRepeating("CreateLine", 2.0f, 0.01f);
+			InvokeRepeating("CreateLine", 0.0f, 0.01f);
 		}
-		SweptTime = SweptTime - Time.deltaTime;
-		if(SweptTime < 0){{
+		SweptTime = SweptTime + Time.deltaTime;
+		if(SweptTime > FixedSweptTime){{
 				CancelInvoke ("CreateLine");
-				VoidTime = VoidTime - Time.deltaTime;	
+				VoidTime = VoidTime + Time.deltaTime;	
 			}
-			if (VoidTime < 0) {
-				SweptTime = FixedSweptTime;
-				VoidTime = FixedVoidTime;
+			if (VoidTime > FixedVoidTime) {
+				SweptTime = 0;
+				VoidTime = 0;
 			}
 		}
 
-		FixedSweptTime = TimeSlider.TimeSwept;
-		FixedVoidTime = TimeSlider.TimeSwept;
+
 	}
+
+//	void Update () {
+//		//Debug.log("TimeSwept " + )
+//		if (SweptTime == FixedSweptTime) {
+//			RandomColor = new Color (Random.value, Random.value, Random.value, 1.0f);
+//			InvokeRepeating("CreateLine", 2.0f, 0.01f);
+//		}
+//		SweptTime = SweptTime - Time.deltaTime;
+//		if(SweptTime < 0){{
+//				CancelInvoke ("CreateLine");
+//				VoidTime = VoidTime - Time.deltaTime;	
+//			}
+//			if (VoidTime < 0) {
+//				SweptTime = FixedSweptTime;
+//				VoidTime = FixedVoidTime;
+//			}
+//		}
+//
+//		FixedSweptTime = TimeSlider.TimeSwept;
+//		FixedVoidTime = TimeSlider.TimeSwept;
+//	}
 
 	void CreateLine()
 	{

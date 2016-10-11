@@ -24,6 +24,8 @@ public class ResizeElementToScreenFactor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		height = Camera.main.orthographicSize * 2;
+		width = height * Screen.width/ Screen.height;
 		spriteRenderer.transform.localScale = new Vector3(ScreenFactor*width / unitWidth, ScreenFactor*width / unitWidth);
 	}
 }

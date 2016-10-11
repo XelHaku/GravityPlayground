@@ -5,7 +5,7 @@ public class SunCrashGameOver : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,13 @@ public class SunCrashGameOver : MonoBehaviour {
 		Debug.Log("SUN CRASH");
 		if(col.gameObject.tag == "CoolPlanet" )
 		{			//gameObject.SetActive(false);
+			GameObject Sun = GameObject.FindGameObjectWithTag("Sun");
+			Destroy (col);Destroy (Sun);
+			PlanetData.BeginCalculus = false;
 
-			SceneManager.LoadScene ("MainMenu",LoadSceneMode.Single);
+			//SceneManager.LoadScene ("MainMenu",LoadSceneMode.Single);
+			GameObject Dog = GameObject.FindGameObjectWithTag("DogGameOver");
+			Dog.GetComponent<Canvas> ().enabled = true;
 		}
 
 

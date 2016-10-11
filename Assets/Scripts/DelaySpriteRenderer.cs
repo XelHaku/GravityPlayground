@@ -5,7 +5,7 @@ public class DelaySpriteRenderer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (DeactivateSpriteRenderer ());
+		//StartCoroutine (DeactivateSpriteRenderer ());
 	}
 	
 	// Update is called once per frame

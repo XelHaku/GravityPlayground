@@ -15,7 +15,7 @@ public class DeactivateLine : MonoBehaviour {
 	IEnumerator	DeactivateSpriteRenderer(){
 		//Debug.Log("colider Activation");
 
-		yield return new WaitForSeconds (4.0f*TimeSlider.TimeSwept-0.2f*TimeSlider.TimeSwept);
+		yield return new WaitForSeconds (3.0f*TimeSlider.TimeSwept+0.75f*TimeSlider.TimeSwept);
 		GetComponent<LineRenderer> ().enabled = false;
 	}
 }

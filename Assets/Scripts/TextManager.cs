@@ -2,6 +2,9 @@
 using System.Collections;
 using UnityEngine.UI;
 
+using System.Collections.Generic;
+using System.Linq;
+using System;
 public class TextManager : MonoBehaviour {
 	Text text;
 	//float PeriodTime=0;
@@ -21,7 +24,7 @@ public class TextManager : MonoBehaviour {
 	void Update () {
 		
 		text.text = "Period T = : " +10* (int)PlanetData.PlanetPeriod + " days"+
-			"\nForce = " + 1000*(int)Gravity.ForceMeasurement + " N" +
+			"\nForce = " + Mathf.Round((float)(1000*Gravity.ForceMeasurement * 100f)) / 100f + " N" +
 			"\nAphelion Distance = " + (int)PlanetData.Afelio.magnitude + " 10^3km"+
 			"\nPerihelion Distance = " + (int)PlanetData.Perihelio.magnitude + " 10^3km";
 

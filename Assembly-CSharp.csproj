@@ -45,11 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\DeactiveCollider.cs" />
      <Compile Include="Assets\Scripts\AfelioPosition.cs" />
+     <Compile Include="Assets\Scripts\AlphaEqual0.cs" />
      <Compile Include="Assets\Scripts\BallPivotMechanicsOnTouch.cs" />
      <Compile Include="Assets\Scripts\Class\PlanetData.cs" />
      <Compile Include="Assets\Scripts\DeactivateLine.cs" />
+     <Compile Include="Assets\Scripts\DeactiveCollider.cs" />
      <Compile Include="Assets\Scripts\DelayCollider.cs" />
      <Compile Include="Assets\Scripts\DelaySpriteRenderer.cs" />
      <Compile Include="Assets\Scripts\DestroyOnContact.cs" />

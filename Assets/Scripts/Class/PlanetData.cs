@@ -78,7 +78,7 @@ public class PlanetData : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col) 
 	{
 		Debug.Log("PeriHelion Reached");
-		if(col.gameObject.tag == "Perihelion")
+		if(col.gameObject.tag == "Perihelion" && Time.timeSinceLevelLoad > 10.0f)
 		{			//gameObject.SetActive(false);
 			PlanetPeriod = TempPlanetPeriod;
 			TempPlanetPeriod = 0;
@@ -93,7 +93,7 @@ public class PlanetData : MonoBehaviour
 	IEnumerator	DeactivateColliderDelay(){
 		//Debug.Log("colider Activation");
 
-		yield return new WaitForSeconds (1.0f);
+		yield return new WaitForSeconds (5.0f);
 		//GetComponent<Collider2D> ().enabled = true;
 		GameObject PeriHelion = GameObject.FindGameObjectWithTag("Perihelion");
 		PeriHelion.GetComponent<Collider2D> ().enabled = true;
