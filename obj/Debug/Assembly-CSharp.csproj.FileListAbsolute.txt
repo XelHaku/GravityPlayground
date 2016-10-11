@@ -39,3 +39,4 @@ C:\Users\tamez_000\Documents\UnityProjects\GravityPlayground\Temp\bin\Debug\Unit
 C:\Users\tamez_000\Documents\UnityProjects\GravityPlayground\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\tamez_000\Documents\UnityProjects\GravityPlayground\obj\Debug\Assembly-CSharp.dll
 C:\Users\tamez_000\Documents\UnityProjects\GravityPlayground\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Juan\Documents\UnityProjects\GravityPlayground\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

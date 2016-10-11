@@ -82,7 +82,7 @@ public class PlanetData : MonoBehaviour
 		{			//gameObject.SetActive(false);
 			PlanetPeriod = TempPlanetPeriod;
 			TempPlanetPeriod = 0;
-			GetComponent<Collider2D> ().enabled = false;
+			col.GetComponent<Collider2D> ().enabled = false;
 			StartCoroutine (DeactivateColliderDelay ());
 
 		}
@@ -93,8 +93,10 @@ public class PlanetData : MonoBehaviour
 	IEnumerator	DeactivateColliderDelay(){
 		//Debug.Log("colider Activation");
 
-		yield return new WaitForSeconds (2.0f);
-		GetComponent<Collider2D> ().enabled = true;
+		yield return new WaitForSeconds (1.0f);
+		//GetComponent<Collider2D> ().enabled = true;
+		GameObject PeriHelion = GameObject.FindGameObjectWithTag("Perihelion");
+		PeriHelion.GetComponent<Collider2D> ().enabled = true;
 		Debug.Log("colider Activation");
 	}
 }

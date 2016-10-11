@@ -59,8 +59,11 @@
      <Compile Include="Assets\Scripts\InstatiateLine.cs" />
      <Compile Include="Assets\Scripts\MainMenu\ChangeSceneButton.cs" />
      <Compile Include="Assets\Scripts\MainMenu\DisplayValueonText.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\ResizeElementToScreenFactor.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\ResizeSpriteToScreen.cs" />
      <Compile Include="Assets\Scripts\MainMenu\RestartButton.cs" />
      <Compile Include="Assets\Scripts\MainMenu\SliderValues.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\TimeSlider.cs" />
      <Compile Include="Assets\Scripts\PerihelionPosition.cs" />
      <Compile Include="Assets\Scripts\PinchZoom.cs" />
      <Compile Include="Assets\Scripts\PlanetClass.cs" />

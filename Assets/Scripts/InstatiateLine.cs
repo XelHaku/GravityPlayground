@@ -6,18 +6,23 @@ public class InstatiateLine : MonoBehaviour {
 	private  GameObject actualLine;
 	public float SweptTime;
 	public float VoidTime;
+	public float FixedSweptTime;
+	public float FixedVoidTime;
 	Color RandomColor;
 	// Use this for initialization
 	void Start () {
-		SweptTime = 5;
-		VoidTime = 5;
+		FixedSweptTime = TimeSlider.TimeSwept;
+		FixedVoidTime = TimeSlider.TimeSwept;
+		SweptTime = TimeSlider.TimeSwept;
+		VoidTime = TimeSlider.TimeSwept;
 		RandomColor = new Color (Random.value, Random.value, Random.value, 1.0f);
 		//InvokeRepeating("CreateLine", 2.0f, 0.01f);//
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (SweptTime == 5) {
+		//Debug.log("TimeSwept " + )
+		if (SweptTime == FixedSweptTime) {
 			RandomColor = new Color (Random.value, Random.value, Random.value, 1.0f);
 			InvokeRepeating("CreateLine", 2.0f, 0.01f);
 		}
@@ -27,10 +32,13 @@ public class InstatiateLine : MonoBehaviour {
 				VoidTime = VoidTime - Time.deltaTime;	
 			}
 			if (VoidTime < 0) {
-				SweptTime = 5;
-				VoidTime = 5;
+				SweptTime = FixedSweptTime;
+				VoidTime = FixedVoidTime;
 			}
 		}
+
+		FixedSweptTime = TimeSlider.TimeSwept;
+		FixedVoidTime = TimeSlider.TimeSwept;
 	}
 
 	void CreateLine()
