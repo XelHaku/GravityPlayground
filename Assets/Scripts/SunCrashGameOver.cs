@@ -25,6 +25,9 @@ public class SunCrashGameOver : MonoBehaviour {
 			//SceneManager.LoadScene ("MainMenu",LoadSceneMode.Single);
 			GameObject Dog = GameObject.FindGameObjectWithTag("DogGameOver");
 			Dog.GetComponent<Canvas> ().enabled = true;
+
+			GameObject HUD = GameObject.FindGameObjectWithTag("HUDCanvas");
+			Destroy (HUD);
 		}
 
 
