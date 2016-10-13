@@ -6,7 +6,7 @@ public class DrawPlanetPath : MonoBehaviour {
 	public GameObject actualEllipsePoint;
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("CreateEllipsePopint", 0.5f, 0.35f);//
+		InvokeRepeating("CreateEllipsePopint", 0.0f, 1f);//
 
 
 	}
